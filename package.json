@@ -1,8 +1,8 @@
 {
   "name": "mobilegroup2",
   "version": "0.0.1",
-  "author": "Ionic Framework",
-  "homepage": "https://ionicframework.com/",
+  "author": "Fernando Hernández",
+  "homepage": "https://github.com/fherdlcruz",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
