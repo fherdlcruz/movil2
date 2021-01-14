@@ -30,6 +30,12 @@
           <ion-input type="numeric" readonly="true" [(ngModel)]="edad"></ion-input>
         </ion-item>
 
+
+      <ion-item>
+        <ion-button color="primary" (click)="aumentarAnio()">Aumentar edad</ion-button>
+        <ion-button color="primary" (click)="restarAnio()">Restar edad</ion-button>
+      </ion-item>
+
       </ion-list>
     </ion-grid>
   
@@ -37,20 +43,32 @@
 
   <ion-row>
     <ion-grid>
-       <!-- Resultados-->
-      <ion-list>
-        <p>Nomnbre completo : {{nombre}} {{paterno}} {{materno}} </p>
-        <p>Edad:{{edad}}</p>
-      </ion-list>
+      <ion-item>
+        <ion-label position="stacked">Sexo</ion-label>
+        <ion-select [(ngModel)]="sexo"  placeholder="Seleccione una opción" okText="Seleccionar" cancelText="Cancelar">
+          <ion-select-option value="M">Mujer</ion-select-option>
+          <ion-select-option value="H">Hombre</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>Mascotas</ion-label>
+        <ion-select [(ngModel)]="mascotas" multiple="true" [value]="mascotas" >
+          <ion-select-option value="COTORRO">Cotorro</ion-select-option>
+          <ion-select-option value="GATO">Gato</ion-select-option>
+          <ion-select-option value="PERRO">Perro</ion-select-option>
+        </ion-select>
+      </ion-item>
     </ion-grid>
   </ion-row>
   <ion-row>
     <ion-grid>
-      <ion-item>
-        <ion-button color="primary" (click)="aumentarAnio()">Aumentar edad</ion-button>
-        <ion-button color="primary" (click)="restarAnio()">Restar edad</ion-button>
-
-      </ion-item>
+       <!-- Resultados-->
+      <ion-list>
+        <p>Nomnbre completo : {{nombre}} {{paterno}} {{materno}} </p>
+        <p>Edad:{{edad}}</p>
+        <p>Sexo : {{ sexo == ''? '': (sexo == 'H' ? 'HOMBRE':'MUJER')}}</p>
+        <p>Mascotas: {{ mascotas}}</p>
+      </ion-list>
     </ion-grid>
   </ion-row>
 

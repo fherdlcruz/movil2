@@ -11,6 +11,8 @@ export class Tab4Page implements OnInit {
   private paterno:string="";
   materno:any="";
   edad:number = 0;
+  sexo:string =  '';
+  mascotas: string;
 
   constructor() { }
 
