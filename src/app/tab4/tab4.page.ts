@@ -13,8 +13,24 @@ export class Tab4Page implements OnInit {
   edad:number = 0;
   sexo:string =  '';
   mascotas: string;
+  idiomas = ['ESPAÑOL (ESPAÑA)','ESPAÑOL (MEXICO)','INGLES','PORTUGUES','FRANCES','ITALIANO','ALEMAN'];
+  idiomaSelected:any;
+  pasatiempos:any;
+  pasatiempoSelected:any;
 
-  constructor() { }
+  constructor() { 
+    this.pasatiempos = [
+      {id:1,valor:'Fútbol', descripcion:'Retas en las canchas'},
+    
+      {id:2,valor:'Leer', descripcion:'Leer por las mañanas anter de comenzar el día'},
+
+      {id:3,valor:'Programar',descripcion:'Escribir códigos de mis proyecto por 2 horas diarias'},
+
+      {id:4,valor:'Enseñar', descripcion:'Compartir el conocimiento a todos y seguir aprendiendo'},
+
+      {id:5,valor:'Cocinar', descripcion:'Cocinar los fines de semana con mi esposa'},
+    ]
+  }
 
   ngOnInit() {
     console.log("Iniciando el TAB 4 PAGE");

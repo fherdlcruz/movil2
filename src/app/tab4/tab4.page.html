@@ -45,17 +45,32 @@
     <ion-grid>
       <ion-item>
         <ion-label position="stacked">Sexo</ion-label>
-        <ion-select [(ngModel)]="sexo"  placeholder="Seleccione una opción" okText="Seleccionar" cancelText="Cancelar">
+        <ion-select interface="popover" [(ngModel)]="sexo"  placeholder="Seleccione una opción" okText="Seleccionar" cancelText="Cancelar">
           <ion-select-option value="M">Mujer</ion-select-option>
           <ion-select-option value="H">Hombre</ion-select-option>
         </ion-select>
       </ion-item>
+
       <ion-item>
         <ion-label>Mascotas</ion-label>
-        <ion-select [(ngModel)]="mascotas" multiple="true" [value]="mascotas" >
+        <ion-select interface="action-sheet" [(ngModel)]="mascotas" multiple="true" [value]="mascotas" >
           <ion-select-option value="COTORRO">Cotorro</ion-select-option>
           <ion-select-option value="GATO">Gato</ion-select-option>
           <ion-select-option value="PERRO">Perro</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Idiomas</ion-label>
+        <ion-select interface="alert" multiple="true" okText="Seleccionar" cancelText="Cancelar" [(ngModel)]="idiomaSelected" [value]="idiomaSelected">
+          <ion-select-option *ngFor="let idioma of idiomas" [value]="idioma">{{idioma}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Pasatiempos</ion-label>
+        <ion-select multiple="true" okText="Seleccionar" cancelText="Cerrar" [(ngModel)]="pasatiempoSelected" [value]="pasatiempoSelected">
+          <ion-select-option *ngFor="let p of pasatiempos" [value]="p">{{p.valor}}</ion-select-option>
         </ion-select>
       </ion-item>
     </ion-grid>
@@ -68,7 +83,11 @@
         <p>Edad:{{edad}}</p>
         <p>Sexo : {{ sexo == ''? '': (sexo == 'H' ? 'HOMBRE':'MUJER')}}</p>
         <p>Mascotas: {{ mascotas}}</p>
+        <p>Idiomas : {{idiomaSelected}}</p>
+        <p>Pasatiempos</p>
+        <p *ngFor="let p of pasatiempoSelected;">{{p.id}} ) {{p.valor }} ({{p.descripcion}}) </p>
       </ion-list>
+      
     </ion-grid>
   </ion-row>
 
