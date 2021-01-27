@@ -22,6 +22,11 @@ export class AppComponent {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+      console.error('Entrando');
+
+      console.info('Entrando');
+
+      console.warn('Entrando');
     });
   }
 }
