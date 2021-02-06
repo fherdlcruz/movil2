@@ -3,6 +3,12 @@ import { Component } from '@angular/core';
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
+import firebase from 'firebase';
+// Add the Firebase services that you want to use
+import "firebase/auth";
+import "firebase/firestore";
+import { firebaseConfig } from 'src/environments/firebase.config';
+
 
 @Component({
   selector: 'app-root',
@@ -22,11 +28,8 @@ export class AppComponent {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
-      console.error('Entrando');
-
-      console.info('Entrando');
-
-      console.warn('Entrando');
     });
+    console.log('Entando al firebaseConfig')
+    firebase.initializeApp(firebaseConfig);
   }
 }

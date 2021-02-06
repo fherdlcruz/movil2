@@ -15,22 +15,25 @@
   <ion-row>
     <ion-grid>
       <ion-col size="12">
+        <form #form="ngForm" (ngSubmit)="loginFirebase(form)">
         <ion-list>
           
           <ion-item>
             <ion-label position="stacked">Usuario</ion-label>
-            <ion-input type="text" placeholder="@"></ion-input>
+            <ion-input type="email" placeholder="@" name="email" id="email" ngModel required></ion-input>
           </ion-item>
 
           <ion-item>
             <ion-label position="stacked">Contraseña</ion-label>
-            <ion-input type="password" placeholder="**********"></ion-input>
+            <ion-input type="password" placeholder="**********" name="pwd" id="pwd" ngModel required></ion-input>
           </ion-item>
 
         </ion-list>
+      
         <section>
-          <ion-button expand="block" (click)="iniciarSesion()">Iniciar sesión</ion-button>
+          <ion-button type="submit" expand="block">Iniciar sesión</ion-button>
         </section>
+      </form>
       </ion-col>
     </ion-grid>
   </ion-row>
